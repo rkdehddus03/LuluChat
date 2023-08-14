@@ -162,7 +162,7 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
 
         initializeApp();
-        MY_SECRET_KEY = getResources().getString(R.string.openai_secret_key);
+        MY_SECRET_KEY = "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";
         usersData = getUsersDataFromAsset("users_data.json");
         flag = 0;
 
@@ -257,7 +257,7 @@ public class ChatActivity extends AppCompatActivity {
                 }
                 RequestBody body = RequestBody.create(object.toString(), JSON);
                 Request request = new Request.Builder()
-                        .url("http://121.138.183.119:31002/recommend")
+                        .url(getResources().getString(R.string.recommend_url))
                         .post(body)
                         .build();
 
